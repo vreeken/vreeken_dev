@@ -114,41 +114,6 @@
 											</p>
 										</section>
 									</article>
-									
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
-										<header>
-											<h3>Rhoncus Semper</h3>
-										</header>
-									</article>
-								</div>
-								<div class="col-4 col-12-mobile">
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a>
-										<header>
-											<h3>Magna Nullam</h3>
-										</header>
-									</article>
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
-										<header>
-											<h3>Natoque Vitae</h3>
-										</header>
-									</article>
-								</div>
-								<div class="col-4 col-12-mobile">
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
-										<header>
-											<h3>Dolor Penatibus</h3>
-										</header>
-									</article>
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
-										<header>
-											<h3>Orci Convallis</h3>
-										</header>
-									</article>
 								</div>
 							</div>
 
@@ -163,7 +128,7 @@
 								<h2>About Me</h2>
 							</header>
 
-							<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
+							<a href="#" class="image featured"><img src="images/me.jpg" alt="" /></a>
 
 							<p>Tincidunt eu elit diam magnis pretium accumsan etiam id urna. Ridiculus
 							ultricies curae quis et rhoncus velit. Lobortis elementum aliquet nec vitae
@@ -225,7 +190,7 @@
 		
 <script>
 	// Menu Toggling
-	document.querySelector("#main").addEventListener("click", function(event) {
+	document.getElementById("main").addEventListener("click", function(event) {
 		// We're listening to click events on all of #main, so check if user specifically clicked the toggle button
 		if (event.target.id === "menu-button") {
 			// Toggle header visibility
@@ -236,6 +201,63 @@
 			document.querySelector("body").classList.remove("header-visible");
 		}
 	});
+
+	// Keep an array of our navigation links to appropriately assign the "active" class to the section we are currently in
+	window.sectionLinksArray = [];
+	window.sectionLinksArray.push(document.getElementById("top-link"));
+	window.sectionLinksArray.push(document.getElementById("portfolio-link"));
+	window.sectionLinksArray.push(document.getElementById("about-link"));
+	window.sectionLinksArray.push(document.getElementById("contact-link"));
+	window.prevNavLocationId = 0;
+
+	// Get references to each section here so we don't have to do it on each "scroll" event
+	window.topSection = document.getElementById("top");
+	window.portfolioSection = document.getElementById("portfolio");
+	window.aboutSection = document.getElementById("about");
+	window.contactSection = document.getElementById("contact");
+
+	//Update our navigation "active" link depending on our current scroll position
+	window.addEventListener("scroll", function() {
+		// Our current vertical scroll position
+		var y = window.scrollY;
+		
+		// Assign id with the corresponding section that we are scrolled within
+		var id = 0;
+		if (y >= getOffset(window.contactSection)) {
+			id = 3;
+		}
+		else if (y >= getOffset(window.aboutSection)) {
+			id = 2;
+		}
+		else if (y >= getOffset(window.portfolioSection)) {
+			id = 1;
+		}
+
+		// Check if our currect section has changed, and if so set "active" class appropriately
+		if (id !== window.prevNavLocationId) {
+			for (var i = 0; i<sectionLinksArray.length; i++) {
+				if (i === id) {
+					sectionLinksArray[i].classList.add('active');
+				}
+				else {
+					sectionLinksArray[i].classList.remove('active');
+				}
+			}
+			// Keep track of our current section id
+			window.prevNavLocationId = id;
+		}
+	});
+
+	// Get the vertical offset of an element
+	// Source: https://stackoverflow.com/a/442474/1330096
+	function getOffset(el) {
+		var _y = 0;
+		while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
+			_y += el.offsetTop - el.scrollTop;
+			el = el.offsetParent;
+		}
+		return _y;
+	}
 </script>
 	</body>
 </html>
