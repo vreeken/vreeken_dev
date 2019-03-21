@@ -68,7 +68,7 @@
 
 		<!-- Main -->
 			<div id="main">
-				<div id="headerToggle"><i id="menu-button" class="fas fa-bars"></i></div>
+
 				<!-- Intro -->
 					<section id="top" class="one dark cover">
 						<div class="container">
@@ -86,13 +86,13 @@
 					</section>
 
 				<!-- Portfolio -->
-					<section id="portfolio" class="two">
-						<div class="container">
+					<section id="portfolio">
+						<div class="container max-width">
 							<header>
 								<h2>Portfolio</h2>
 							</header>
 							<div class="row">
-								<div class="col-12">
+								<div class="full-width">
 									<article class="item">
 										<header>
 											<h3><a href="https://www.mybudget123.com">MyBudget 123</a></h3>
@@ -128,10 +128,12 @@
 												This was a fantastic project for a technical challenge. It involved gathering lots of information from the user: each of their incomes and expenses had to be input. So ease of use and making everything intuitive was important.
 												Then came data processing. I had to calculate each of their bills and expenses out 5 years, calculating correct dates for each income/expense, whether they were one time events or ongoing with varying frequencies; 
 												keeping a running track of their bank balance and letting the user know the minimum positive amount or maximum deficit they had in their bank account during those five years.
-												<br />
+											</p>
+											<p>
 												While I had made basic projects with Vue.js this was my first major project. I learned a lot with data structuring and organization, but looking back on it, 
 												I've learned much more since then in terms of factoring out components for better code reusability/DRY principles.
-												<br />
+											</p>
+											<p>
 												This was also my first time with payment processing which was an intimidating thought, but the Braintree API made for a fairly simple setup and execution.
 											</p>
 										</section>
@@ -143,8 +145,8 @@
 					</section>
 
 				<!-- About Me -->
-					<section id="about" class="three">
-						<div class="container">
+					<section id="about">
+						<div class="container max-width">
 
 							<header>
 								<h2>About Me</h2>
@@ -152,37 +154,46 @@
 
 							<a href="#" class="image featured"><img src="images/me.jpg" alt="" /></a>
 
-							<p>Tincidunt eu elit diam magnis pretium accumsan etiam id urna. Ridiculus
-							ultricies curae quis et rhoncus velit. Lobortis elementum aliquet nec vitae
-							laoreet eget cubilia quam non etiam odio tincidunt montes. Elementum sem
-							parturient nulla quam placerat viverra mauris non cum elit tempus ullamcorper
-							dolor. Libero rutrum ut lacinia donec curae mus vel quisque sociis nec
-							ornare iaculis.</p>
+							<p>
+								I enjoy the logical and scientific side of life. Math and science have rules and definitive answers to their questions, as opposed to interpretive answers found in art and literature. 
+								I find structure, reason, and organization necessary for my sanity; and have found solace in programming.
+							</p>
+							<p>
+								I've been programming as a hobby for over 15 years, but only more recently thought of it as a career. I got hooked on BASIC and things spiraled out of control from there.
+								I learned C++ in college, but the immediate satisfaction that came from javascript UI control led me more toward web development. 
+								Flash/Actionscript was a wild ride (while it lasted) that taught me a lot of game development. But the logic and architecture of back end programming is what calls to me the most.
+							</p>
+							<p>
+								While PHP has plenty of inconsistencies and other issues, I love it; and the Laravel Framework has only increased my love of the language. Though not quite as potent,
+								the same can be said for Javascript and the Vue.js Framework. I find I achieve the most productivity when I couple a Laravel back end with a Vue.js front end.
+							</p>
+							<p>
+								But enough about programming. While I'm not tinkering with code you can usually find me playing video games and saving the world in my latest Dungeons and Dragons game.
+							</p>
 
 						</div>
 					</section>
 
 				<!-- Contact -->
-					<section id="contact" class="four">
-						<div class="container">
+					<section id="contact">
+						<div class="container max-width">
 
 							<header>
 								<h2>Contact</h2>
 							</header>
 
-							<p>Elementum sem parturient nulla quam placerat viverra
-							mauris non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia
-							donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc
-							orci ridiculus faucibus a consectetur. Porttitor curae mauris urna mi dolor.</p>
+							<p>
+								Have any questions or would like to talk about a project? Drop me a line:
+							</p>
 
 							<form method="post" action="#">
 								<div class="row">
-									<div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="Name" /></div>
-									<div class="col-6 col-12-mobile"><input type="text" name="email" placeholder="Email" /></div>
-									<div class="col-12">
+									<div class="form-input"><input type="text" name="name" placeholder="Name" /></div>
+									<div class="form-input"><input type="text" name="email" placeholder="Email" /></div>
+									<div class="full-width">
 										<textarea name="message" placeholder="Message"></textarea>
 									</div>
-									<div class="col-12 center">
+									<div class="full-width center">
 										<input class="button" type="submit" value="Send Message" />
 									</div>
 								</div>
