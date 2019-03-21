@@ -206,16 +206,16 @@
 		
 <script>
 	// Menu Toggling
+	// Toggle if user clicks on the hamburger-menu icon
+	document.querySelector("#headerToggle").addEventListener("click", function(event) {
+		document.querySelector("body").classList.toggle("header-visible");
+	});
+	// Remove class if user clicks on either #main or #footer (basically anything except the header menu)
 	document.getElementById("main").addEventListener("click", function(event) {
-		// We're listening to click events on all of #main, so check if user specifically clicked the toggle button
-		if (event.target.id === "menu-button") {
-			// Toggle header visibility
-			document.querySelector("body").classList.toggle("header-visible");
-		}
-		else {
-			// Remove header visibility
 			document.querySelector("body").classList.remove("header-visible");
-		}
+	});
+	document.getElementById("footer").addEventListener("click", function(event) {
+		document.querySelector("body").classList.remove("header-visible");
 	});
 
 	// Keep an array of our navigation links to appropriately assign the "active" class to the section we are currently in
