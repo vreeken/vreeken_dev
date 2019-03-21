@@ -1,15 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,600");
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+/* Basic CSS Reset */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 	margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;
 }
-* {
-	box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
 body { line-height: 1; }
 ol, ul { list-style: none; }
@@ -18,12 +13,12 @@ blockquote:before, blockquote:after, q:before, q:after { content: ''; content: n
 table { border-collapse: collapse; border-spacing: 0; }
 
 body {
-	background: #fff;
+	background: #222729;
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 19pt;
+    font-size: 14pt;
     font-weight: 300;
     line-height: 1.75em;
-	color: #888;
+	color: #444;
 	overflow-x: hidden;
 	background-image: url(../../images/texture.png);
 }
@@ -37,6 +32,9 @@ a {
     -ms-transition: color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
     transition: color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
     outline: 0;
+}
+a:hover {
+    color: #000;
 }
 
 #header {
@@ -67,7 +65,7 @@ a {
     transition: all 0.5s ease;
 }
 
-.header-visible #main {
+.header-visible #main, .header-visible #footer, .header-visible #headerToggle {
 	-moz-transform: translateX(300px);
     -webkit-transform: translateX(300px);
     -ms-transform: translateX(300px);
@@ -202,6 +200,10 @@ ul.icons a {
 	z-index: 10001;
 	color: #fff;
 }
+#headerToggle.is-mobile {
+    top: auto;
+    bottom: 5px;
+}
 
 #main {
 	margin-left: 0px;
@@ -220,9 +222,9 @@ ul.icons a {
     -ms-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
-
-header {
-	
+#main > section {
+    padding: 4em 0;
+    box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.05), inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.025);
 }
 footer {
 	margin: 2em 0 0 0;
@@ -231,22 +233,23 @@ h2 {
     font-size: 2em;
     letter-spacing: -1px;
 }
+h3 {
+    font-size: 1.5em;
+    letter-spacing: -1px;
+}
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
     line-height: 1.5em;
 }
 
-section {
-	padding: 4em 0;
-}
 *.dark {
 	color: rgba(255, 255, 255, 0.75);
 }
 .dark strong {
 	color: #FFF;
 }
-section.one {
+#top {
 	text-align: center;
 	background-color: #58565e;
 	background-image: url(../../images/banner.png);
@@ -317,11 +320,75 @@ section.one {
 	margin-left: -20px;
 	margin-top: -20px;
 }
-.row > .col-6 {
-    width: 50%;
+
+#portfolio {
+    background-color: #f5fafa;
 }
-.row > .col-12 {
+#about {
+    background-color: #ecf1f1;
+}
+#contact {
+    background-color: #e8edec;
+}
+#portfolio ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#portfolio li {
+    margin: 0 .5em;
+}
+#portfolio i {
+    color: #666;
+    -moz-transition: color 0.2s ease-in-out;
+    -webkit-transition: color 0.2s ease-in-out;
+    -ms-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
+}
+#portfolio .image.fit {
     width: 100%;
+    max-height: 300px;
+    overflow-y: hidden;
+    display: block;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.container > header {
+    text-align: center;
+}
+.item header p {
+    margin: 1em 0;
+}
+.image.fit > img {
+    width: 100%;
+}
+.floaty > li {
+    cursor: default;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+.floaty > li:hover {
+    text-shadow: 0 6px 6px #888;
+    color: #000;
+
+    -moz-transform: translateY(-4px);
+	-webkit-transform: translateY(-4px);
+	-ms-transform: translateY(-4px);
+	transform: translateY(-4px);
+}
+.floaty > li:hover i {
+    color: #000 !important;
+}
+p {
+    text-indent: 2em;
+}
+.max-width {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 form input[type="text"], form input[type="email"], form input[type="password"], form select {
@@ -350,7 +417,7 @@ form textarea {
 }
 input, textarea, select {
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 19pt;
+    font-size: 16pt;
     font-weight: 300;
     line-height: 1.75em;
     color: #888;
@@ -360,17 +427,38 @@ input, textarea, select {
 	color: #000;
 }
 #footer {
+    margin-left: 0px;
     text-align: center;
     background-color: #dce3e2;
     padding: 3em 0 4em 0;
     box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.05), inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.025);
     font-size: 0.8em;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 #footer ul.icons li:hover {
     color: #000;
 }
 
+
+.form-input, .full-width {
+    width: 100%;
+}
+
+@media screen and (min-width : 768px) {
+    body, input, textarea, select {
+        font-size: 16pt;
+    }
+    .form-input {
+        width: 50%;
+    }
+}
 @media screen and (min-width : 900px) {
+    body, input, textarea, select {
+        font-size: 19pt;
+    }
 	#header {
 		-moz-transform: translateX(0);
 		-webkit-transform: translateX(0);
@@ -380,7 +468,7 @@ input, textarea, select {
 	#headerToggle {
 		opacity: 0;
 	}
-	#main {
+	#main, #footer, #headerToggle {
 		margin-left: 300px;
-	}
+    }
 }
