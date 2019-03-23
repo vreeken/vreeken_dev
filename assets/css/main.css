@@ -315,7 +315,6 @@ h1, h2, h3, h4, h5, h6 {
     align-items: stretch;
 }
 
-
 #contact .row > * {
     padding: 20px 0 0 20px;
 }
@@ -374,7 +373,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: .5em;
 }
 .portfolio-container {
-    background-color: #dce3e2;
+    background-color: #eff3f5;;
     -webkit-box-shadow: 0 0 3px 0 rgba(0,0,0,.3);
     box-shadow: 0 0 3px 0 rgba(0,0,0,.3); 
     padding: 20px !important;
@@ -389,28 +388,34 @@ h1, h2, h3, h4, h5, h6 {
 .my-roles > div {
     flex: 50%;
 }
+.case-study {
+    padding-bottom: 1em;
+    border-bottom: 1px solid rgba(0, 0, 0, .5);
+}
 .technologies {
     font-size: .8em;
-    border-bottom: 1px solid rgba(0, 0, 0, .5);
     padding-bottom: 1em;
-}
-.technologies > div {
     display: flex;
-    align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
 }
+.technologies > div {
+    flex: 1;
+    min-width: 25%;
+    text-align: center;
+}
+
 strong {
     font-weight: bold;
 }
-.floaty > div > div {
+.floaty > div {
     cursor: default;
     -moz-transition: all 0.2s ease-in-out;
     -webkit-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
-.floaty > div > div:hover {
+.floaty > div:hover {
     text-shadow: 0 6px 6px #888;
     color: #000;
 
@@ -419,8 +424,8 @@ strong {
 	-ms-transform: translateY(-4px);
 	transform: translateY(-4px);
 }
-.floaty > div > div:hover i {
-    color: #000 !important;
+.floaty > div:hover i {
+    color: #3c3c3c !important;
 }
 p {
     text-indent: 2em;
