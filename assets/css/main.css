@@ -329,6 +329,11 @@ h1, h2, h3, h4, h5, h6 {
 #about {
     background-color: #ecf1f1;
 }
+#about img {
+    display: block;
+    margin: .5em auto 1em auto;
+    max-width: 100%;
+}
 #contact {
     background-color: #e8edec;
 }
@@ -701,6 +706,11 @@ input.error, textarea.error {
     }
     .header-avatar {
         top: 5px;
+    }
+    #about img {
+        float: right;
+        margin: 0 0 0 1em;
+        width: 50%;
     }
 }
 @media screen and (min-width : 900px) {
