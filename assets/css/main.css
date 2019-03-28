@@ -181,6 +181,9 @@ ul.icons li {
 ul.icons a {
 	border: 0;
 }
+ul.icons a:hover {
+    color: #00a6e9;
+}
 #header ul.icons li:hover {
     color: #00a6e9;
 }
