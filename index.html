@@ -44,6 +44,7 @@
 								<li><a href="#top" id="top-link" class="active"><i class="fas fa-home"></i> Intro</a></li>
 								<li><a href="#portfolio" id="portfolio-link"><i class="fas fa-code"></i> Portfolio</a></li>
 								<li><a href="#about" id="about-link"><i class="fas fa-user"></i>About Me</a></li>
+								<li><a href="#resume" id="resume-link"><i class="fas fa-file-pdf"></i>Resume</a></li>
 								<li><a href="#contact" id="contact-link"><i class="fas fa-envelope"></i> Contact</a></li>
 							</ul>
 						</nav>
@@ -127,7 +128,7 @@
 												</p>
 												<p>
 													While I had made basic projects with Vue.js this was my first major project. I learned a lot with data structuring and organization, but looking back on it, 
-													I've learned much more since then in terms of factoring out components for better code reusability/DRY principles.
+													I've learned much more since then in terms of factoring out components for better adhering to SOLID / DRY principles.
 												</p>
 												<p>
 													This was also my first time with payment processing which was an intimidating thought, but the Braintree API made for a fairly simple setup and execution.
@@ -303,7 +304,17 @@
 							<p>
 								But enough about programming. While I'm not tinkering with code you can usually find me playing video games or saving the world in my latest Dungeons and Dragons game.
 							</p>
+						</div>
+					</section>
 
+				<!-- About Me -->
+					<section id="resume">
+						<div class="container max-width">
+							<header>
+								<h2>Looking for my resume?</h2>
+							</header>
+
+							<a href="files/Michael_Vreeken_Resume.pdf" target="_blank">Here's a fancy version</a> or I also have a <a href="files/Michael_Vreeken_Resume_BW.pdf" target="_blank">printer friendly black and white version</a>.
 						</div>
 					</section>
 
@@ -360,6 +371,7 @@
 					</ul>
 					<ul class="icons">
 						<li><a href="files/Michael_Vreeken_Resume.pdf" target="_blank"><i class="fas fa-file-pdf" alt="Michael Vreeken's Resume" title=" Michael Vreeken's Resume"></i></a></li>
+						<li><a href="files/Michael_Vreeken_Resume_BW.pdf" target="_blank"><i class="fas fa-file-pdf" alt="Michael Vreeken's Resume Printer Friendly" title=" Michael Vreeken's Resume Printer Friendly"></i></a></li>
 						<li><a href="https://www.github.com/vreeken"><i class="fab fa-github" alt="Github" title="Github"></i></a></li>
 						<li><a href="https://www.linkedin.com/in/mpvreeken"><i class="fab fa-linkedin" alt="LinkedIn" title="LinkedIn"></i></a></li>
 						<li><a href="mailto:mike@vreeken.dev"><i class="fas fa-envelope" alt="Email" title="Email"></i></a></li>
@@ -396,6 +408,7 @@
 	window.sectionLinksArray.push(document.getElementById("top-link"));
 	window.sectionLinksArray.push(document.getElementById("portfolio-link"));
 	window.sectionLinksArray.push(document.getElementById("about-link"));
+	window.sectionLinksArray.push(document.getElementById("resume-link"));
 	window.sectionLinksArray.push(document.getElementById("contact-link"));
 	window.prevNavLocationId = 0;
 
@@ -403,6 +416,7 @@
 	window.topSection = document.getElementById("top");
 	window.portfolioSection = document.getElementById("portfolio");
 	window.aboutSection = document.getElementById("about");
+	window.resumeSection = document.getElementById("resume");
 	window.contactSection = document.getElementById("contact");
 
 	//Update our navigation "active" link depending on our current scroll position
@@ -413,6 +427,9 @@
 		// Assign id with the corresponding section that we are scrolled within
 		var id = 0;
 		if (y >= getOffset(window.contactSection)) {
+			id = 4;
+		}
+		else if (y >= getOffset(window.resumeSection)) {
 			id = 3;
 		}
 		else if (y >= getOffset(window.aboutSection)) {
