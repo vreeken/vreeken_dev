@@ -321,6 +321,9 @@ h1, h2, h3, h4, h5, h6 {
 #resume {
 	background-color: #f5fafa;
 }
+#resume .button {
+	margin: 1.5em 0;
+}
 
 #contact .row > * {
     padding: 20px 0 0 20px;

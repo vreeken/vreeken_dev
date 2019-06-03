@@ -43,8 +43,8 @@
 							<ul>
 								<li><a href="#top" id="top-link" class="active"><i class="fas fa-home"></i> Intro</a></li>
 								<li><a href="#portfolio" id="portfolio-link"><i class="fas fa-code"></i> Portfolio</a></li>
-								<li><a href="#about" id="about-link"><i class="fas fa-user"></i>About Me</a></li>
 								<li><a href="#resume" id="resume-link"><i class="fas fa-file-pdf"></i>Resume</a></li>
+								<li><a href="#about" id="about-link"><i class="fas fa-user"></i>About Me</a></li>
 								<li><a href="#contact" id="contact-link"><i class="fas fa-envelope"></i> Contact</a></li>
 							</ul>
 						</nav>
@@ -56,7 +56,6 @@
 					<!-- Social Icons -->
 						<ul class="icons">
 							<li><a href="files/Michael_Vreeken_Resume.pdf" target="_blank"><i class="fas fa-file-pdf" alt="Michael Vreeken's Resume" title=" Michael Vreeken's Resume"></i></a></li>
-							<li><a href="files/Michael_Vreeken_Resume_BW.pdf" target="_blank"><i class="fas fa-file-pdf" alt="Michael Vreeken's Resume Printer Friendly" title=" Michael Vreeken's Resume Printer Friendly"></i></a></li>
 							<li><a href="https://www.github.com/vreeken"><i class="fab fa-github" alt="Github" title="Github"></i></a></li>
 							<li><a href="https://www.linkedin.com/in/mpvreeken"><i class="fab fa-linkedin" alt="LinkedIn" title="LinkedIn"></i></a></li>
 							<li><a href="mailto:mike@vreeken.dev"><i class="fas fa-envelope" alt="Email" title="Email"></i></a></li>
@@ -278,6 +277,24 @@
 						</div>
 					</section>
 
+				<!-- Resume -->
+					<section id="resume">
+						<div class="container max-width">
+							<header>
+								<h2>Looking for my resume?</h2>
+							</header>
+							<p>
+								I am a passionate freelance full stack web Developer with 10+ years of experience. I'm currently seeking a full time full stack, front end, or back end web developer position. 
+								I Consistently grew sales by 10% year-over-year through superior interpersonal relationships at The Home Depot. 
+								I Saved Able Inc. 40 work hours per month by writing a script to merge their 1 million+ item inventory database. 
+								I am a creative problem solver, an enthusiastic team player and a disciplined self educator. 
+							</p>
+							<div class="center">
+								<a href="files/Michael_Vreeken_Resume.pdf" target="_blank" class="button">Here's my resume</a>
+							</div>
+						</div>
+					</section>
+
 				<!-- About Me -->
 					<section id="about">
 						<div class="container max-width">
@@ -304,17 +321,6 @@
 							<p>
 								But enough about programming. While I'm not tinkering with code you can usually find me playing video games or saving the world in my latest Dungeons and Dragons game.
 							</p>
-						</div>
-					</section>
-
-				<!-- About Me -->
-					<section id="resume">
-						<div class="container max-width">
-							<header>
-								<h2>Looking for my resume?</h2>
-							</header>
-
-							<a href="files/Michael_Vreeken_Resume.pdf" target="_blank">Here's a fancy version</a> or I also have a <a href="files/Michael_Vreeken_Resume_BW.pdf" target="_blank">printer friendly black and white version</a>.
 						</div>
 					</section>
 
@@ -371,7 +377,6 @@
 					</ul>
 					<ul class="icons">
 						<li><a href="files/Michael_Vreeken_Resume.pdf" target="_blank"><i class="fas fa-file-pdf" alt="Michael Vreeken's Resume" title=" Michael Vreeken's Resume"></i></a></li>
-						<li><a href="files/Michael_Vreeken_Resume_BW.pdf" target="_blank"><i class="fas fa-file-pdf" alt="Michael Vreeken's Resume Printer Friendly" title=" Michael Vreeken's Resume Printer Friendly"></i></a></li>
 						<li><a href="https://www.github.com/vreeken"><i class="fab fa-github" alt="Github" title="Github"></i></a></li>
 						<li><a href="https://www.linkedin.com/in/mpvreeken"><i class="fab fa-linkedin" alt="LinkedIn" title="LinkedIn"></i></a></li>
 						<li><a href="mailto:mike@vreeken.dev"><i class="fas fa-envelope" alt="Email" title="Email"></i></a></li>
@@ -407,8 +412,8 @@
 	window.sectionLinksArray = [];
 	window.sectionLinksArray.push(document.getElementById("top-link"));
 	window.sectionLinksArray.push(document.getElementById("portfolio-link"));
-	window.sectionLinksArray.push(document.getElementById("about-link"));
 	window.sectionLinksArray.push(document.getElementById("resume-link"));
+	window.sectionLinksArray.push(document.getElementById("about-link"));
 	window.sectionLinksArray.push(document.getElementById("contact-link"));
 	window.prevNavLocationId = 0;
 
@@ -429,10 +434,10 @@
 		if (y >= getOffset(window.contactSection)) {
 			id = 4;
 		}
-		else if (y >= getOffset(window.resumeSection)) {
+		else if (y >= getOffset(window.aboutSection)) {
 			id = 3;
 		}
-		else if (y >= getOffset(window.aboutSection)) {
+		else if (y >= getOffset(window.resumeSection)) {
 			id = 2;
 		}
 		else if (y >= getOffset(window.portfolioSection)) {
