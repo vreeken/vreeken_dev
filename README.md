@@ -1,3 +1,3 @@
 # Michael Vreeken's Portfolio Site
 
-My personal portfolio site located at https://www.vreeken.dev
+My personal portfolio site located at https://vreeken.dev
